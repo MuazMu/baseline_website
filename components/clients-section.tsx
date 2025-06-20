@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 import { useInView } from "react-intersection-observer"
 import { Button } from "@/components/ui/button"
 import { Building, Building2, Landmark, BadgeCheck } from "lucide-react"
+import Image from "next/image"
 
 export default function ClientsSection() {
   const [ref, inView] = useInView({
@@ -30,24 +31,99 @@ export default function ClientsSection() {
     },
   }
 
-  const clients = {
-    government: [
-      "Document Authentication & Registration Office (DARO)",
-      "Ministry of Finance & Economy Development (MoFED)",
-      "Ethiopia Radiation Protection Authority (ERPA)",
-      "Ethiopia Revenue and Customs Authority (ERCA)",
-      "Addis Ababa City Gov. Bureau of Labor & Social Affairs",
-    ],
-    banking: ["Dashen Bank", "Berhan Int. Bank", "Zemen Bank", "Addis Int. Bank", "Lion Int. Bank"],
-    organizations: [
-      "Ethiopia Commodity Exchange (ECX)",
-      "Berhan na Selam Printing Press",
-      "Huawei Technology in Ethiopia",
-      "SOS",
-      "St. Mary's Catholic Church School",
-      "Netherlands Development Organization (Ethiopia)",
-    ],
-  }
+  const governmentLogos = [
+    {
+      src: "/images/logos/senedoch.webp",
+      alt: "Document Authentication & Registration Office (DARO)",
+      name: "DARO",
+    },
+    {
+      src: "/images/logos/ministry-of-finance.webp",
+      alt: "Ministry of Finance & Economy Development",
+      name: "MoFED",
+    },
+    {
+      src: "/images/logos/erpa.jpeg",
+      alt: "Ethiopia Radiation Protection Authority",
+      name: "ERPA",
+    },
+    {
+      src: "/images/logos/gebiwoch.jpeg",
+      alt: "Ethiopia Revenue and Customs Authority",
+      name: "ERCA",
+    },
+    {
+      src: "/images/logos/addis-ababa-labor.jpeg",
+      alt: "Addis Ababa City Gov. Bureau of Labor & Social Affairs",
+      name: "AA Labor Bureau",
+    },
+  ]
+
+  const bankingLogos = [
+    {
+      src: "/images/logos/dashen-bank.jpeg",
+      alt: "Dashen Bank",
+      name: "Dashen Bank",
+    },
+    {
+      src: "/images/logos/berhan-bank.jpeg",
+      alt: "Berhan International Bank",
+      name: "Berhan Int. Bank",
+    },
+    {
+      src: "/images/logos/zemen-bank.webp",
+      alt: "Zemen Bank",
+      name: "Zemen Bank",
+    },
+    {
+      src: "/images/logos/addis-int-bank.png",
+      alt: "Addis International Bank",
+      name: "Addis Int. Bank",
+    },
+    {
+      src: "/images/logos/lion-bank.webp",
+      alt: "Lion International Bank",
+      name: "Lion Int. Bank",
+    },
+    {
+      src: "/images/logos/negd-bank.webp",
+      alt: "Negd Bank",
+      name: "Negd Bank",
+    },
+  ]
+
+  const organizationLogos = [
+    {
+      src: "/images/logos/ecx.jpeg",
+      alt: "Ethiopia Commodity Exchange",
+      name: "Ethiopia Commodity Exchange (ECX)",
+    },
+    {
+      src: "/images/logos/berhan-ena-selam.png",
+      alt: "Berhan na Selam Printing Enterprise",
+      name: "Berhan na Selam Printing Press",
+    },
+    {
+      src: "/images/logos/huawei.png",
+      alt: "Huawei Technology in Ethiopia",
+      name: "Huawei Technology in Ethiopia",
+    },
+    {
+      src: "/images/logos/sos.png",
+      alt: "SOS Children's Villages",
+      name: "SOS",
+    },
+    {
+      src: "/images/logos/saint-mary-school.jpeg",
+      alt: "St. Mary's Catholic Church School",
+      name: "St. Mary's Catholic Church School",
+    },
+    {
+      src: "/images/logos/snv.png",
+      alt: "Netherlands Development Organization (Ethiopia)",
+      name: "Netherlands Development Organization (Ethiopia)",
+    },
+  ]
 
   const reasons = [
     {
@@ -70,6 +146,60 @@ export default function ClientsSection() {
     },
   ]
 
+  const MarqueeRow = ({
+    logos,
+    direction = "left",
+    speed = 50,
+  }: {
+    logos: any[]
+    direction?: "left" | "right"
+    speed?: number
+  }) => {
+    return (
+      <div className="relative overflow-hidden py-4">
+        <motion.div
+          className="flex gap-8 whitespace-nowrap"
+          animate={{
+            x: direction === "left" ? [0, -1000] : [-1000, 0],
+          }}
+          transition={{
+            x: {
+              repeat: Number.POSITIVE_INFINITY,
+              repeatType: "loop",
+              duration: speed,
+              ease: "linear",
+            },
+          }}
+        >
+          {/* Duplicate logos for seamless loop */}
+          {[...logos, ...logos, ...logos].map((logo, index) => (
+            <div
+              key={index}
+              className="flex-shrink-0 bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow duration-300"
+              style={{ minWidth: "200px", height: "120px" }}
+            >
+              {logo.placeholder ? (
+                <div className="w-full h-full flex items-center justify-center bg-gray-100 rounded">
+                  <span className="text-sm font-medium text-gray-600 text-center px-2">{logo.name}</span>
+                </div>
+              ) : (
+                <div className="w-full h-full flex items-center justify-center">
+                  <Image
+                    src={logo.src || "/placeholder.svg"}
+                    alt={logo.alt}
+                    width={160}
+                    height={80}
+                    className="max-w-full max-h-full object-contain"
+                  />
+                </div>
+              )}
+            </div>
+          ))}
+        </motion.div>
+      </div>
+    )
+  }
+
   return (
     <section id="clients" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
@@ -83,50 +213,32 @@ export default function ClientsSection() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <div className="flex items-center mb-4">
+        <div className="space-y-12 mb-16">
+          {/* Government Institutions */}
+          <div>
+            <div className="flex items-center justify-center mb-6">
               <Building className="h-6 w-6 text-primary mr-2" />
-              <h3 className="text-xl font-bold text-gray-900">Government Institutions</h3>
+              <h3 className="text-2xl font-bold text-gray-900">Government Institutions</h3>
             </div>
-            <ul className="space-y-2">
-              {clients.government.map((client, index) => (
-                <li key={index} className="flex items-center text-gray-600">
-                  <span className="h-1.5 w-1.5 rounded-full bg-primary mr-2"></span>
-                  {client}
-                </li>
-              ))}
-            </ul>
+            <MarqueeRow logos={governmentLogos} direction="left" speed={40} />
           </div>
 
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <div className="flex items-center mb-4">
+          {/* Banking Sector */}
+          <div>
+            <div className="flex items-center justify-center mb-6">
               <Landmark className="h-6 w-6 text-primary mr-2" />
-              <h3 className="text-xl font-bold text-gray-900">Banking Sector</h3>
+              <h3 className="text-2xl font-bold text-gray-900">Banking Sector</h3>
             </div>
-            <ul className="space-y-2">
-              {clients.banking.map((client, index) => (
-                <li key={index} className="flex items-center text-gray-600">
-                  <span className="h-1.5 w-1.5 rounded-full bg-primary mr-2"></span>
-                  {client}
-                </li>
-              ))}
-            </ul>
+            <MarqueeRow logos={bankingLogos} direction="right" speed={35} />
           </div>
 
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <div className="flex items-center mb-4">
+          {/* Other Organizations */}
+          <div>
+            <div className="flex items-center justify-center mb-6">
               <Building2 className="h-6 w-6 text-primary mr-2" />
-              <h3 className="text-xl font-bold text-gray-900">Other Organizations</h3>
+              <h3 className="text-2xl font-bold text-gray-900">Other Organizations</h3>
             </div>
-            <ul className="space-y-2">
-              {clients.organizations.map((client, index) => (
-                <li key={index} className="flex items-center text-gray-600">
-                  <span className="h-1.5 w-1.5 rounded-full bg-primary mr-2"></span>
-                  {client}
-                </li>
-              ))}
-            </ul>
+            <MarqueeRow logos={organizationLogos} direction="left" speed={45} />
           </div>
         </div>
 

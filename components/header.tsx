@@ -33,8 +33,6 @@ export default function Header() {
     { name: "About", href: "/about" },
     { name: "Services", href: "/services" },
     { name: "Products", href: "/products" },
-    { name: "Clients", href: "/#clients" },
-    { name: "Contact", href: "/#contact" },
   ]
 
   const isActive = (path: string) => {
@@ -80,7 +78,9 @@ export default function Header() {
               {link.name}
             </Link>
           ))}
-          <Button className="bg-primary hover:bg-primary/90">Contact Us</Button>
+          <Link href="/contact">
+            <Button className="bg-primary hover:bg-primary/90">Contact Us</Button>
+          </Link>
         </nav>
 
         {/* Mobile Menu Button */}
@@ -111,7 +111,9 @@ export default function Header() {
                   {link.name}
                 </Link>
               ))}
-              <Button className="bg-primary hover:bg-primary/90 w-full">Contact Us</Button>
+              <Link href="/contact">
+                <Button className="bg-primary hover:bg-primary/90 w-full">Contact Us</Button>
+              </Link>
             </nav>
           </div>
         </div>
