@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 import { useInView } from "react-intersection-observer"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { Server, Monitor, Database, Cpu, Camera } from "lucide-react"
+import { Server, Monitor, Database, Cpu, Camera, Home } from "lucide-react"
 
 export default function ServicesSection() {
   const [ref, inView] = useInView({
@@ -76,14 +76,14 @@ export default function ServicesSection() {
       items: ["IP-Based Cameras", "CCTV Systems", "IPTV", "SMATV", "Biometric/PIN Door Access"],
     },
     {
-      icon: <Monitor className="h-10 w-10 text-primary" />,
-      title: "Office Equipment",
+      icon: <Home className="h-10 w-10 text-primary" />,
+      title: "Home Automation",
       items: [
-        "Canon Photocopiers",
-        "Toshiba Photocopiers",
-        "Samsung Photocopiers",
-        "Xerox Photocopiers",
-        "PBX Phone Systems",
+        "Smart Home Indoor Monitor",
+        "Video Door Entry Systems",
+        "Indoor Monitors",
+        "IP Systems",
+        "Outdoor Panels",
       ],
     },
   ]
@@ -167,8 +167,8 @@ export default function ServicesSection() {
             </div>
             <div>
               <Image
-                src="/images/tech-support.jpg"
-                alt="Technical Support"
+                src="/images/office.jpg"
+                alt="Technical Support Team"
                 width={500}
                 height={400}
                 className="rounded-lg shadow-md w-full h-auto object-cover"

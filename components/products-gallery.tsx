@@ -9,7 +9,7 @@ import {
   Shield,
   Database,
   Camera,
-  Printer,
+  Home,
   Server,
   Wifi,
   HardDrive,
@@ -24,10 +24,11 @@ import {
   Flame,
   Eye,
   Lock,
-  Phone,
   Copy,
   Cable,
   Wrench,
+  DoorOpen,
+  Tv,
 } from "lucide-react"
 
 export default function ProductsGallery() {
@@ -42,15 +43,15 @@ export default function ProductsGallery() {
       icon: Network,
       description: "Complete networking solutions for enterprise connectivity",
       products: [
-        { name: "Servers", icon: Server, image: "/images/products/server-rack.jpg" },
-        { name: "Routers", icon: Router, image: "/images/products/network-router.jpg" },
+        { name: "Servers", icon: Server, image: "/images/network-server.jpg" },
+        { name: "Routers", icon: Router, image: "/images/firewall.jpg" },
         { name: "Switches", icon: Network, image: "/images/network-switch.jpg" },
         { name: "Firewalls", icon: Shield, image: "/images/firewall.jpg" },
-        { name: "Access Points", icon: Wifi, image: "/images/products/access-point.jpg" },
-        { name: "Patch Panels", icon: Network, image: "/images/products/patch-panel.jpg" },
-        { name: "Network Tool Kits", icon: Wrench, image: "/images/products/network-tools.jpg" },
-        { name: "Rack Cabinets", icon: Server, image: "/images/products/rack-cabinet.jpg" },
-        { name: "Cables and more", icon: Cable, image: "/images/products/network-cables.jpg" },
+        { name: "Access Points", icon: Wifi, image: "/images/network-switch.jpg" },
+        { name: "Patch Panels", icon: Network, image: "/images/network-server.jpg" },
+        { name: "Network Tool Kits", icon: Wrench, image: "/images/firewall.jpg" },
+        { name: "Rack Cabinets", icon: Server, image: "/images/network-server.jpg" },
+        { name: "Cables and more", icon: Cable, image: "/images/network-switch.jpg" },
       ],
     },
     {
@@ -58,11 +59,11 @@ export default function ProductsGallery() {
       icon: Building2,
       description: "Specialized equipment for banking and financial institutions",
       products: [
-        { name: "Passbook Printers", icon: Printer, image: "/images/passbook-printer.jpg" },
+        { name: "Passbook Printers", icon: Copy, image: "/images/passbook-printer.jpg" },
         { name: "Check Scanners", icon: Scan, image: "/images/check-scanner.jpg" },
         { name: "Note Counters/Detectors", icon: Calculator, image: "/images/note-counter.jpg" },
         { name: "Queue Management Solutions", icon: Users, image: "/images/queue-management.jpg" },
-        { name: "ATM Accessories", icon: CreditCard, image: "/images/products/atm-accessories.jpg" },
+        { name: "ATM Accessories", icon: CreditCard, image: "/images/check-scanner.jpg" },
       ],
     },
     {
@@ -74,8 +75,8 @@ export default function ProductsGallery() {
         { name: "Antivirus Software", icon: Shield, image: "/images/antivirus.jpg" },
         { name: "Recovery Software", icon: HardDrive, image: "/images/recovery.jpg" },
         { name: "Enterprise Solutions", icon: Building2, image: "/images/enterprise.jpg" },
-        { name: "Geophysics Software", icon: Database, image: "/images/products/geophysics-software.jpg" },
-        { name: "Data Center Monitoring", icon: Monitor, image: "/images/products/data-monitoring.jpg" },
+        { name: "Geophysics Software", icon: Database, image: "/images/microsoft.jpg" },
+        { name: "Data Center Monitoring", icon: Monitor, image: "/images/enterprise.jpg" },
       ],
     },
     {
@@ -83,12 +84,12 @@ export default function ProductsGallery() {
       icon: Database,
       description: "Complete data center infrastructure and management systems",
       products: [
-        { name: "HVAC Systems", icon: Wind, image: "/images/products/hvac-system.jpg" },
-        { name: "Environmental Management", icon: Monitor, image: "/images/products/environmental-monitoring.jpg" },
-        { name: "Fire Extinguishing Systems", icon: Flame, image: "/images/products/fire-suppression.jpg" },
-        { name: "Power System Cabling", icon: Zap, image: "/images/products/power-cabling.jpg" },
-        { name: "Power Distribution", icon: Zap, image: "/images/products/power-distribution.jpg" },
-        { name: "Grounding and Bonding", icon: Zap, image: "/images/products/grounding.jpg" },
+        { name: "HVAC Systems", icon: Wind, image: "/images/network-server.jpg" },
+        { name: "Environmental Management", icon: Monitor, image: "/images/enterprise.jpg" },
+        { name: "Fire Extinguishing Systems", icon: Flame, image: "/images/firewall.jpg" },
+        { name: "Power System Cabling", icon: Zap, image: "/images/network-switch.jpg" },
+        { name: "Power Distribution", icon: Zap, image: "/images/network-server.jpg" },
+        { name: "Grounding and Bonding", icon: Zap, image: "/images/firewall.jpg" },
       ],
     },
     {
@@ -97,23 +98,23 @@ export default function ProductsGallery() {
       description: "Advanced security and surveillance solutions",
       products: [
         { name: "IP-Based Cameras", icon: Camera, image: "/images/ip-camera.jpg" },
-        { name: "CCTV Systems", icon: Eye, image: "/images/products/cctv-system.jpg" },
-        { name: "IPTV", icon: Monitor, image: "/images/products/iptv.jpg" },
-        { name: "SMATV", icon: Monitor, image: "/images/products/smatv.jpg" },
+        { name: "CCTV Systems", icon: Eye, image: "/images/ip-camera.jpg" },
+        { name: "IPTV", icon: Tv, image: "/images/enterprise.jpg" },
+        { name: "SMATV", icon: Tv, image: "/images/microsoft.jpg" },
         { name: "Firewalls", icon: Shield, image: "/images/firewall.jpg" },
         { name: "Biometric/PIN Door Access", icon: Lock, image: "/images/access-control.jpg" },
       ],
     },
     {
-      title: "Office Equipment",
-      icon: Printer,
-      description: "Essential office equipment for business operations",
+      title: "Home Automation",
+      icon: Home,
+      description: "Smart home solutions and automation systems",
       products: [
-        { name: "Canon Photocopiers", icon: Copy, image: "/images/products/canon-copier.jpg" },
-        { name: "Toshiba Photocopiers", icon: Copy, image: "/images/products/toshiba-copier.jpg" },
-        { name: "Samsung Photocopiers", icon: Copy, image: "/images/products/samsung-copier.jpg" },
-        { name: "Xerox Photocopiers", icon: Copy, image: "/images/products/xerox-copier.jpg" },
-        { name: "PBX Phone Systems", icon: Phone, image: "/images/products/pbx-system.jpg" },
+        { name: "Smart Home Indoor Monitor", icon: Monitor, image: "/images/enterprise.jpg" },
+        { name: "Video Door Entry Systems", icon: DoorOpen, image: "/images/access-control.jpg" },
+        { name: "Indoor Monitors", icon: Monitor, image: "/images/microsoft.jpg" },
+        { name: "IP Systems", icon: Network, image: "/images/network-switch.jpg" },
+        { name: "Outdoor Panels", icon: Camera, image: "/images/ip-camera.jpg" },
       ],
     },
   ]
@@ -167,6 +168,7 @@ export default function ProductsGallery() {
                         alt={product.name}
                         fill
                         className="object-cover group-hover:scale-105 transition-transform duration-300"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                       />
                       <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300"></div>
                     </div>
