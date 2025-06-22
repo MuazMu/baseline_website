@@ -91,7 +91,7 @@ export default function HeroSection() {
               <div className="relative bg-white p-4 rounded-3xl shadow-xl transform -rotate-3">
                 <div className="aspect-[4/3] relative overflow-hidden rounded-2xl">
                   <Image
-                    src="/images/hero-datacenter.jpg"
+                    src="/images/hero-datacenter-tech.webp"
                     alt="Enterprise IT Solutions"
                     width={800}
                     height={600}

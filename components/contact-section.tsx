@@ -74,7 +74,8 @@ export default function ContactSection() {
                 <div className="flex items-start">
                   <Phone className="h-6 w-6 text-primary mr-3 mt-1 flex-shrink-0" />
                   <div>
-                    <p className="text-gray-600">+251 115 520 151 / +251 115 520 152</p>
+                    <p className="text-gray-600">+251 115 540 684 / +251 115 544 207</p>
+                    <p className="text-gray-600">+251 911 234 771</p>
                   </div>
                 </div>
                 <div className="flex items-start">
