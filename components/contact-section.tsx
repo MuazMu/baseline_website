@@ -79,7 +79,7 @@ export default function ContactSection() {
                 </div>
                 <div className="flex items-start">
                   <Mail className="h-6 w-6 text-primary mr-3 mt-1 flex-shrink-0" />
-                  <p className="text-gray-600">baseline@ethionet.et</p>
+                  <p className="text-gray-600">info@baslineplc.com</p>
                 </div>
                 <div className="flex items-start">
                   <Clock className="h-6 w-6 text-primary mr-3 mt-1 flex-shrink-0" />
