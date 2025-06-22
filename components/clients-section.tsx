@@ -156,33 +156,30 @@ export default function ClientsSection() {
     speed?: number
   }) => {
     return (
-      <div className="relative overflow-hidden py-4">
-        <motion.div
-          className="flex gap-8 whitespace-nowrap"
-          animate={{
-            x: direction === "left" ? [0, -1000] : [-1000, 0],
-          }}
-          transition={{
-            x: {
-              repeat: Number.POSITIVE_INFINITY,
-              repeatType: "loop",
-              duration: speed,
-              ease: "linear",
-            },
-          }}
-        >
-          {/* Duplicate logos for seamless loop */}
-          {[...logos, ...logos, ...logos].map((logo, index) => (
-            <div
-              key={index}
-              className="flex-shrink-0 bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow duration-300"
-              style={{ minWidth: "200px", height: "120px" }}
-            >
-              {logo.placeholder ? (
-                <div className="w-full h-full flex items-center justify-center bg-gray-100 rounded">
-                  <span className="text-sm font-medium text-gray-600 text-center px-2">{logo.name}</span>
-                </div>
-              ) : (
+      <>
+        {/* Desktop Marquee */}
+        <div className="hidden md:block relative overflow-hidden py-4">
+          <motion.div
+            className="flex gap-8 whitespace-nowrap"
+            animate={{
+              x: direction === "left" ? [0, -1000] : [-1000, 0],
+            }}
+            transition={{
+              x: {
+                repeat: Number.POSITIVE_INFINITY,
+                repeatType: "loop",
+                duration: speed,
+                ease: "linear",
+              },
+            }}
+          >
+            {/* Duplicate logos for seamless loop */}
+            {[...logos, ...logos, ...logos].map((logo, index) => (
+              <div
+                key={index}
+                className="flex-shrink-0 bg-white rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow duration-300"
+                style={{ minWidth: "200px", height: "120px" }}
+              >
                 <div className="w-full h-full flex items-center justify-center">
                   <Image
                     src={logo.src || "/placeholder.svg"}
@@ -192,11 +189,46 @@ export default function ClientsSection() {
                     className="max-w-full max-h-full object-contain"
                   />
                 </div>
-              )}
-            </div>
-          ))}
-        </motion.div>
-      </div>
+              </div>
+            ))}
+          </motion.div>
+        </div>
+
+        {/* Mobile Circular Animation */}
+        <div className="md:hidden relative h-80 overflow-hidden">
+          <div className="absolute inset-0 flex items-center justify-center">
+            {logos.map((logo, index) => (
+              <motion.div
+                key={index}
+                className="absolute bg-white rounded-lg shadow-md p-2 hover:shadow-lg transition-shadow duration-300"
+                style={{ width: "80px", height: "60px" }}
+                animate={{
+                  rotate: 360,
+                }}
+                transition={{
+                  duration: 20 + index * 2,
+                  repeat: Number.POSITIVE_INFINITY,
+                  ease: "linear",
+                }}
+                initial={{
+                  x: Math.cos((index * 2 * Math.PI) / logos.length) * 120,
+                  y: Math.sin((index * 2 * Math.PI) / logos.length) * 120,
+                }}
+              >
+                <div className="w-full h-full flex items-center justify-center">
+                  <Image
+                    src={logo.src || "/placeholder.svg"}
+                    alt={logo.alt}
+                    width={60}
+                    height={40}
+                    className="max-w-full max-h-full object-contain"
+                  />
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </>
     )
   }
 

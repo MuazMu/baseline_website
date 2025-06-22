@@ -59,11 +59,11 @@ export default function ProductsGallery() {
       icon: Building2,
       description: "Specialized equipment for banking and financial institutions",
       products: [
-        { name: "Passbook Printers", icon: Copy, image: "/images/passbook-printer.jpg" },
-        { name: "Check Scanners", icon: Scan, image: "/images/check-scanner.jpg" },
-        { name: "Note Counters/Detectors", icon: Calculator, image: "/images/note-counter.jpg" },
-        { name: "Queue Management Solutions", icon: Users, image: "/images/queue-management.jpg" },
-        { name: "ATM Accessories", icon: CreditCard, image: "/images/check-scanner.jpg" },
+        { name: "Passbook Printers", icon: Copy, image: "/images/products/banking-printer.jpg" },
+        { name: "Check Scanners", icon: Scan, image: "/images/products/document-scanner.jpg" },
+        { name: "Note Counters/Detectors", icon: Calculator, image: "/images/products/money-counter.png" },
+        { name: "Queue Management Solutions", icon: Users, image: "/images/products/queue-system.png" },
+        { name: "ATM Accessories", icon: CreditCard, image: "/images/products/atm-machine.jpg" },
       ],
     },
     {
@@ -110,11 +110,11 @@ export default function ProductsGallery() {
       icon: Home,
       description: "Smart home solutions and automation systems",
       products: [
-        { name: "Smart Home Indoor Monitor", icon: Monitor, image: "/images/enterprise.jpg" },
-        { name: "Video Door Entry Systems", icon: DoorOpen, image: "/images/access-control.jpg" },
-        { name: "Indoor Monitors", icon: Monitor, image: "/images/microsoft.jpg" },
-        { name: "IP Systems", icon: Network, image: "/images/network-switch.jpg" },
-        { name: "Outdoor Panels", icon: Camera, image: "/images/ip-camera.jpg" },
+        { name: "Smart Home Indoor Monitor", icon: Monitor, image: "/images/products/smart-home-monitor.jpg" },
+        { name: "Video Door Entry Systems", icon: DoorOpen, image: "/images/products/video-door-entry.jpg" },
+        { name: "Indoor Monitors", icon: Monitor, image: "/images/products/indoor-monitor.jpg" },
+        { name: "IP Systems", icon: Network, image: "/images/products/ip-system.jpg" },
+        { name: "Outdoor Panels", icon: Camera, image: "/images/products/outdoor-panel.jpg" },
       ],
     },
   ]
