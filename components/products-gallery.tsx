@@ -86,7 +86,7 @@ export default function ProductsGallery() {
         { name: "HVAC Systems", icon: Wind, image: "/images/products/datacenter/HVAC.png" },
         { name: "Environmental Management", icon: Monitor, image: "/images/products/datacenter/environmental.png" },
         { name: "Fire Extinguishing Systems", icon: Flame, image: "/images/products/datacenter/fireextinguisher.png" },
-        { name: "Power System Cabling", icon: Zap, image: "/images/products/datacenter/cabling.png" },
+        { name: "Power System Cabling", icon: Zap, image: "/images/products/datacenter/powersystem.png" },
         { name: "Power Distribution", icon: Zap, image: "/images/products/datacenter/power distributor.png" },
         { name: "Grounding and Bonding", icon: Zap, image: "/images/products/datacenter/Bonding_Neutral_and_Ground.png" },
       ],

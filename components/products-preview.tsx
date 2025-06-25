@@ -9,13 +9,13 @@ export default function ProductsPreview() {
   const featuredProducts = [
     {
       name: "Enterprise Servers",
-      image: "/images/network-server.jpg",
+      image: "/images/network/server.png",
       category: "Network Equipment",
       description: "High-performance servers for business applications",
     },
     {
       name: "Check Scanners",
-      image: "/images/check-scanner.jpg",
+      image: "/images/products/banking/check-scanner.png",
       category: "Banking Equipment",
       description: "Accurate and efficient check processing",
     },
@@ -27,7 +27,7 @@ export default function ProductsPreview() {
     },
     {
       name: "CCTV Systems",
-      image: "/images/cctv.jpg",
+      image: "/images/products/security/CCTV-System-c.png",
       category: "Security Systems",
       description: "Complete surveillance solutions",
     },
