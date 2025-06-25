@@ -54,7 +54,7 @@ export default function HeroSection() {
                   Explore Services
                 </Button>
               </Link>
-              <Link href="/#contact">
+              <Link href="/contact">
                 <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary/10">
                   Contact Us <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>

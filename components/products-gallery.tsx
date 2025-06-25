@@ -161,7 +161,7 @@ export default function ProductsGallery() {
                     transition={{ duration: 0.5, delay: categoryIndex * 0.1 + productIndex * 0.05 }}
                     className="bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden group"
                   >
-                    <div className="relative h-48 overflow-hidden">
+                    <div className="relative h-40 sm:h-48 overflow-hidden">
                       <Image
                         src={product.image || "/placeholder.svg"}
                         alt={product.name}

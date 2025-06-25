@@ -15,7 +15,7 @@ export default function ProductsPreview() {
     },
     {
       name: "Check Scanners",
-      image: "/images/products/banking/check-scanner.png",
+      image: "/images/products/banking/checkscanner.png",
       category: "Banking Equipment",
       description: "Accurate and efficient check processing",
     },
