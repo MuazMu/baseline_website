@@ -194,37 +194,23 @@ export default function ClientsSection() {
           </motion.div>
         </div>
 
-        {/* Mobile Circular Animation */}
-        <div className="md:hidden relative h-80 overflow-hidden">
-          <div className="absolute inset-0 flex items-center justify-center">
+        {/* Mobile Horizontal Scroll Marquee */}
+        <div className="md:hidden overflow-x-auto py-4">
+          <div className="flex gap-4 px-2 w-max">
             {logos.map((logo, index) => (
-              <motion.div
+              <div
                 key={index}
-                className="absolute bg-white rounded-lg shadow-md p-2 hover:shadow-lg transition-shadow duration-300"
+                className="flex-shrink-0 bg-white rounded-lg shadow-md p-2 flex items-center justify-center"
                 style={{ width: "80px", height: "60px" }}
-                animate={{
-                  rotate: 360,
-                }}
-                transition={{
-                  duration: 20 + index * 2,
-                  repeat: Number.POSITIVE_INFINITY,
-                  ease: "linear",
-                }}
-                initial={{
-                  x: Math.cos((index * 2 * Math.PI) / logos.length) * 120,
-                  y: Math.sin((index * 2 * Math.PI) / logos.length) * 120,
-                }}
               >
-                <div className="w-full h-full flex items-center justify-center">
-                  <Image
-                    src={logo.src || "/placeholder.svg"}
-                    alt={logo.alt}
-                    width={60}
-                    height={40}
-                    className="max-w-full max-h-full object-contain"
-                  />
-                </div>
-              </motion.div>
+                <Image
+                  src={logo.src || "/placeholder.svg"}
+                  alt={logo.alt}
+                  width={60}
+                  height={40}
+                  className="max-w-full max-h-full object-contain"
+                />
+              </div>
             ))}
           </div>
         </div>
