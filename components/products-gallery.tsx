@@ -1,7 +1,6 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { useInView } from "react-intersection-observer"
 import Image from "next/image"
 import {
   Network,
@@ -32,11 +31,6 @@ import {
 } from "lucide-react"
 
 export default function ProductsGallery() {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  })
-
   const productCategories = [
     {
       title: "Network Equipment",
@@ -119,7 +113,7 @@ export default function ProductsGallery() {
   ]
 
   return (
-    <section ref={ref} className="py-20 bg-white">
+    <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">
@@ -136,7 +130,7 @@ export default function ProductsGallery() {
             <motion.div
               key={category.title}
               initial={{ opacity: 0, y: 50 }}
-              animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: categoryIndex * 0.1 }}
               className="bg-gray-50 rounded-lg p-8"
             >
