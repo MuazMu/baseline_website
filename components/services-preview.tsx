@@ -13,7 +13,7 @@ const previewServices = [
     icon: <Cpu className="h-8 w-8 text-primary" />, title: "Software Solutions", items: ["Microsoft Products", "Antivirus Software"]
   },
   {
-    icon: <Database className="h-8 w-8 text-primary" />, title: "Data Center Solutions", items: ["HVAC Systems", "Power Distribution"]
+    icon: <Database className="h-8 w-8 text-primary" />, title: "Home Automation", items: ["Smart Home Monitors", "Video Door Entry"]
   },
 ]
 
@@ -39,7 +39,7 @@ export default function ServicesPreview() {
           ))}
         </div>
         <div className="text-center">
-          <Link href="/products">
+          <Link href="/services">
             <Button className="bg-primary hover:bg-primary/90 text-white" size="lg">Read More</Button>
           </Link>
         </div>

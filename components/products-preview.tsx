@@ -68,12 +68,14 @@ export default function ProductsPreview() {
               <div className="p-4">
                 <h3 className="text-lg font-bold text-gray-900 mb-2">{product.name}</h3>
                 <p className="text-gray-600 text-sm mb-4">{product.description}</p>
-                <Button
-                  variant="outline"
-                  className="w-full border-primary text-primary hover:bg-primary hover:text-white"
-                >
-                  Learn More
-                </Button>
+                <Link href="/products">
+                  <Button
+                    variant="outline"
+                    className="w-full border-primary text-primary hover:bg-primary hover:text-white"
+                  >
+                    Learn More
+                  </Button>
+                </Link>
               </div>
             </motion.div>
           ))}
