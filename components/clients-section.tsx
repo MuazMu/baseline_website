@@ -194,25 +194,39 @@ export default function ClientsSection() {
           </motion.div>
         </div>
 
-        {/* Mobile Horizontal Scroll Marquee */}
-        <div className="md:hidden overflow-x-auto py-4">
-          <div className="flex gap-4 px-2 w-max">
-            {logos.map((logo, index) => (
+        {/* Mobile Marquee Animation */}
+        <div className="md:hidden relative h-48 overflow-hidden py-4">
+          <motion.div
+            className="flex gap-6 whitespace-nowrap absolute inset-0 items-center"
+            animate={{
+              x: [0, -1000],
+            }}
+            transition={{
+              x: {
+                repeat: Number.POSITIVE_INFINITY,
+                repeatType: "loop",
+                duration: 30,
+                ease: "linear",
+              },
+            }}
+          >
+            {/* Duplicate logos for seamless loop */}
+            {[...logos, ...logos, ...logos, ...logos].map((logo, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 bg-white rounded-lg shadow-md p-2 flex items-center justify-center"
-                style={{ width: "80px", height: "60px" }}
+                className="flex-shrink-0 bg-white rounded-lg shadow-md p-3 flex items-center justify-center"
+                style={{ minWidth: "100px", height: "70px" }}
               >
                 <Image
                   src={logo.src || "/placeholder.svg"}
                   alt={logo.alt}
-                  width={60}
-                  height={40}
+                  width={75}
+                  height={50}
                   className="max-w-full max-h-full object-contain"
                 />
               </div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </>
     )
