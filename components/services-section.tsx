@@ -167,7 +167,7 @@ export default function ServicesSection() {
             </div>
             <div>
               <Image
-                src="/images/technical_department.png"
+                src="/images/office.jpg"
                 alt="Technical Support Team"
                 width={500}
                 height={400}

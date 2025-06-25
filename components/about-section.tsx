@@ -63,7 +63,7 @@ export default function AboutSection() {
             className="relative"
           >
             <div className="relative h-96 rounded-lg overflow-hidden shadow-lg">
-              <Image src="/images/office.png" alt="Baseline Office" fill className="object-cover" />
+              <Image src="/images/office.jpg" alt="Baseline Office" fill className="object-cover" />
             </div>
           </motion.div>
         </div>

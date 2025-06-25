@@ -194,33 +194,24 @@ export default function ClientsSection() {
           </motion.div>
         </div>
 
-        {/* Mobile Circular Animation */}
-        <div className="md:hidden relative h-80 overflow-hidden">
-          <div className="absolute inset-0 flex items-center justify-center">
+        {/* Mobile/Tablet Grid */}
+        <div className="md:hidden">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 py-4">
             {logos.map((logo, index) => (
               <motion.div
                 key={index}
-                className="absolute bg-white rounded-lg shadow-md p-2 hover:shadow-lg transition-shadow duration-300"
-                style={{ width: "80px", height: "60px" }}
-                animate={{
-                  rotate: 360,
-                }}
-                transition={{
-                  duration: 20 + index * 2,
-                  repeat: Number.POSITIVE_INFINITY,
-                  ease: "linear",
-                }}
-                initial={{
-                  x: Math.cos((index * 2 * Math.PI) / logos.length) * 120,
-                  y: Math.sin((index * 2 * Math.PI) / logos.length) * 120,
-                }}
+                className="bg-white rounded-lg shadow-md p-3 hover:shadow-lg transition-shadow duration-300"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                whileHover={{ scale: 1.05 }}
               >
-                <div className="w-full h-full flex items-center justify-center">
+                <div className="h-16 sm:h-20 flex items-center justify-center">
                   <Image
                     src={logo.src || "/placeholder.svg"}
                     alt={logo.alt}
-                    width={60}
-                    height={40}
+                    width={120}
+                    height={60}
                     className="max-w-full max-h-full object-contain"
                   />
                 </div>
@@ -250,7 +241,7 @@ export default function ClientsSection() {
           <div>
             <div className="flex items-center justify-center mb-6">
               <Building className="h-6 w-6 text-primary mr-2" />
-              <h3 className="text-2xl font-bold text-gray-900">Government Institutions</h3>
+              <h3 className="text-xl md:text-2xl font-bold text-gray-900">Government Institutions</h3>
             </div>
             <MarqueeRow logos={governmentLogos} direction="left" speed={40} />
           </div>
@@ -259,7 +250,7 @@ export default function ClientsSection() {
           <div>
             <div className="flex items-center justify-center mb-6">
               <Landmark className="h-6 w-6 text-primary mr-2" />
-              <h3 className="text-2xl font-bold text-gray-900">Banking Sector</h3>
+              <h3 className="text-xl md:text-2xl font-bold text-gray-900">Banking Sector</h3>
             </div>
             <MarqueeRow logos={bankingLogos} direction="right" speed={35} />
           </div>
@@ -268,7 +259,7 @@ export default function ClientsSection() {
           <div>
             <div className="flex items-center justify-center mb-6">
               <Building2 className="h-6 w-6 text-primary mr-2" />
-              <h3 className="text-2xl font-bold text-gray-900">Other Organizations</h3>
+              <h3 className="text-xl md:text-2xl font-bold text-gray-900">Other Organizations</h3>
             </div>
             <MarqueeRow logos={organizationLogos} direction="left" speed={45} />
           </div>
