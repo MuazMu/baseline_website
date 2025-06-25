@@ -157,7 +157,7 @@ export default function ProductsGallery() {
                   <motion.div
                     key={product.name}
                     initial={{ opacity: 0, scale: 0.9 }}
-                    animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.5, delay: categoryIndex * 0.1 + productIndex * 0.05 }}
                     className="bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden group"
                   >

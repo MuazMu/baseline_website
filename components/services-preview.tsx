@@ -39,7 +39,7 @@ export default function ServicesPreview() {
           ))}
         </div>
         <div className="text-center">
-          <Link href="/services">
+          <Link href="/products">
             <Button className="bg-primary hover:bg-primary/90 text-white" size="lg">Read More</Button>
           </Link>
         </div>
