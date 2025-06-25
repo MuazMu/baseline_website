@@ -98,7 +98,7 @@ export default function ProductsGallery() {
       products: [
         { name: "IP-Based Cameras", icon: Camera, image: "/images/products/security/ip-cameras-cw_300.png" },
         { name: "CCTV Systems", icon: Eye, image: "/images/products/security/CCTV-System-c.png" },
-        { name: "IPTV", icon: Tv, image: "/images/enterprise.jpg" },
+        { name: "IPTV", icon: Tv, image: "/images/products/security/iptv.png" },
         { name: "SMATV", icon: Tv, image: "/images/microsoft.jpg" },
         { name: "Firewalls", icon: Shield, image: "/images/products/security/firewalls.png" },
         { name: "Biometric/PIN Door Access", icon: Lock, image: "/images/products/security/biometric_door.png" },
