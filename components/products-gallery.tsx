@@ -148,8 +148,11 @@ export default function ProductsGallery() {
               {/* Products Grid */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                 {category.products.map((product, productIndex) => (
-                  <div
+                  <motion.div
                     key={product.name}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.5, delay: categoryIndex * 0.1 + productIndex * 0.05 }}
                     className="bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden group"
                   >
                     <div className="relative h-40 sm:h-48 min-h-[160px] overflow-hidden">
@@ -168,7 +171,7 @@ export default function ProductsGallery() {
                         <h3 className="font-semibold text-gray-900">{product.name}</h3>
                       </div>
                     </div>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
             </motion.div>
