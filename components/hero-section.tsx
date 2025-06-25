@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import { motion } from "framer-motion"
 import { ChevronDown, ArrowRight } from "lucide-react"
 import Link from "next/link"
+import { Globe } from "@/components/ui/globe"
 
 export default function HeroSection() {
   const scrollRef = useRef<HTMLDivElement>(null)
@@ -26,6 +27,7 @@ export default function HeroSection() {
     >
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
+        <Globe className="absolute inset-0 w-full h-full" />
         <div className="absolute top-0 right-0 w-2/3 h-full bg-primary/10 rounded-bl-[200px]"></div>
         <div className="absolute -top-20 -right-20 w-96 h-96 bg-primary/20 rounded-full blur-3xl"></div>
         <div className="absolute -bottom-40 -left-20 w-80 h-80 bg-primary/10 rounded-full blur-3xl"></div>
