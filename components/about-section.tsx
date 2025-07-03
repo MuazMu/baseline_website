@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 import { useInView } from "react-intersection-observer"
 import Image from "next/image"
 import { Users, Award, Globe, TrendingUp } from "lucide-react"
+import TopSectionBackground from "@/components/ui/top-section-background"
 
 export default function AboutSection() {
   const [ref, inView] = useInView({
@@ -19,7 +20,8 @@ export default function AboutSection() {
   ]
 
   return (
-    <section ref={ref} className="py-20 bg-white">
+    <section ref={ref} className="py-20 bg-white relative overflow-hidden">
+      <TopSectionBackground />
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">

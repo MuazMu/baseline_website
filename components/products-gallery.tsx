@@ -29,6 +29,7 @@ import {
   DoorOpen,
   Tv,
 } from "lucide-react"
+import TopSectionBackground from "@/components/ui/top-section-background"
 
 export default function ProductsGallery() {
   const productCategories = [
@@ -113,7 +114,8 @@ export default function ProductsGallery() {
   ]
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-white relative overflow-hidden">
+      <TopSectionBackground />
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">
