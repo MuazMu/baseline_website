@@ -36,6 +36,7 @@ export default function ServicesSection() {
       icon: <Server className="h-10 w-10 text-primary" />,
       title: "Network Equipment",
       items: ["Servers", "Routers", "Switches", "Firewalls", "Access Points"],
+      image: "/images/services/network.jpg",
     },
     {
       icon: <Monitor className="h-10 w-10 text-primary" />,
@@ -47,6 +48,7 @@ export default function ServicesSection() {
         "Queue Management Solutions",
         "ATM Accessories",
       ],
+      image: "/images/services/banking.jpg",
     },
     {
       icon: <Cpu className="h-10 w-10 text-primary" />,
@@ -58,6 +60,7 @@ export default function ServicesSection() {
         "Enterprise Solutions",
         "Data Center Monitoring",
       ],
+      image: "/images/services/software.jpg",
     },
     {
       icon: <Database className="h-10 w-10 text-primary" />,
@@ -69,11 +72,13 @@ export default function ServicesSection() {
         "Power Distribution",
         "Grounding and Bonding",
       ],
+      image: "/images/services/datacenter.jpg",
     },
     {
       icon: <Camera className="h-10 w-10 text-primary" />,
       title: "Security Systems",
       items: ["IP-Based Cameras", "CCTV Systems", "IPTV", "SMATV", "Biometric/PIN Door Access"],
+      image: "/images/services/security.jpg",
     },
     {
       icon: <Home className="h-10 w-10 text-primary" />,
@@ -85,6 +90,7 @@ export default function ServicesSection() {
         "IP Systems",
         "Outdoor Panels",
       ],
+      image: "/images/services/homeauto.jpg",
     },
   ]
 
@@ -113,6 +119,9 @@ export default function ServicesSection() {
               variants={itemVariants}
               className="bg-white p-6 rounded-lg shadow-md border border-gray-100 hover:shadow-lg transition-all duration-300 hover:border-primary/20 group"
             >
+              <div className="mb-4 w-full h-32 flex items-center justify-center overflow-hidden rounded-md">
+                <Image src={service.image} alt={service.title} width={300} height={128} className="object-cover w-full h-full" />
+              </div>
               <div className="mb-4 transform group-hover:scale-110 transition-transform duration-300">
                 {service.icon}
               </div>
