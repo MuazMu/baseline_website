@@ -6,19 +6,19 @@ import Image from "next/image"
 const previewServices = [
   {
     image: "/images/services/network.jpg",
-    icon: <Server className="h-8 w-8 text-primary" />, title: "Network Equipment", items: ["Servers", "Routers", "Switches"]
+    title: "Network Equipment", items: ["Servers", "Routers", "Switches"]
   },
   {
     image: "/images/services/banking.jpg",
-    icon: <Monitor className="h-8 w-8 text-primary" />, title: "Banking Equipment", items: ["Passbook Printers", "Check Scanners"]
+    title: "Banking Equipment", items: ["Passbook Printers", "Check Scanners"]
   },
   {
     image: "/images/services/software.jpg",
-    icon: <Cpu className="h-8 w-8 text-primary" />, title: "Software Solutions", items: ["Microsoft Products", "Antivirus Software"]
+    title: "Software Solutions", items: ["Microsoft Products", "Antivirus Software"]
   },
   {
     image: "/images/services/homeauto.jpg",
-    icon: <Database className="h-8 w-8 text-primary" />, title: "Home Automation", items: ["Smart Home Monitors", "Video Door Entry"]
+    title: "Home Automation", items: ["Smart Home Monitors", "Video Door Entry"]
   },
 ]
 
@@ -36,7 +36,6 @@ export default function ServicesPreview() {
               <div className="mb-3 w-20 h-20 relative">
                 <Image src={service.image} alt={service.title + ' image'} fill className="object-cover rounded-md" />
               </div>
-              <div className="mb-3">{service.icon}</div>
               <h3 className="font-semibold text-lg text-gray-900 mb-2">{service.title}</h3>
               <ul className="text-gray-600 text-sm space-y-1">
                 {service.items.map((item, i) => (
