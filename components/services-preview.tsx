@@ -1,18 +1,23 @@
 import Link from "next/link"
 import { Server, Monitor, Cpu, Database } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import Image from "next/image"
 
 const previewServices = [
   {
+    image: "/images/services/network.jpg",
     icon: <Server className="h-8 w-8 text-primary" />, title: "Network Equipment", items: ["Servers", "Routers", "Switches"]
   },
   {
+    image: "/images/services/banking.jpg",
     icon: <Monitor className="h-8 w-8 text-primary" />, title: "Banking Equipment", items: ["Passbook Printers", "Check Scanners"]
   },
   {
+    image: "/images/services/software.jpg",
     icon: <Cpu className="h-8 w-8 text-primary" />, title: "Software Solutions", items: ["Microsoft Products", "Antivirus Software"]
   },
   {
+    image: "/images/services/homeauto.jpg",
     icon: <Database className="h-8 w-8 text-primary" />, title: "Home Automation", items: ["Smart Home Monitors", "Video Door Entry"]
   },
 ]
@@ -28,6 +33,9 @@ export default function ServicesPreview() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mb-8">
           {previewServices.map((service, idx) => (
             <div key={idx} className="bg-white p-5 rounded-lg shadow border border-gray-100 flex flex-col items-center">
+              <div className="mb-3 w-20 h-20 relative">
+                <Image src={service.image} alt={service.title + ' image'} fill className="object-cover rounded-md" />
+              </div>
               <div className="mb-3">{service.icon}</div>
               <h3 className="font-semibold text-lg text-gray-900 mb-2">{service.title}</h3>
               <ul className="text-gray-600 text-sm space-y-1">
