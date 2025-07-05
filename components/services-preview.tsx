@@ -32,8 +32,8 @@ export default function ServicesPreview() {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mb-8">
           {previewServices.map((service, idx) => (
-            <div key={idx} className="bg-white p-5 rounded-lg shadow border border-gray-100 flex flex-col items-center">
-              <div className="mb-3 w-20 h-20 relative">
+            <div key={idx} className="bg-white p-5 rounded-lg shadow border border-gray-100 flex flex-col items-stretch">
+              <div className="mb-3 w-full aspect-[16/9] relative">
                 <Image src={service.image} alt={service.title + ' image'} fill className="object-cover rounded-md" />
               </div>
               <h3 className="font-semibold text-lg text-gray-900 mb-2">{service.title}</h3>
