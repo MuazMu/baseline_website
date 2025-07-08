@@ -5,12 +5,6 @@ import { ThemeProvider } from "@/components/theme-provider"
 
 const inter = Inter({ subsets: ["latin"] })
 
-export const metadata = {
-  title: "Baseline Computer Trading PLC - Your Trusted IT Solutions Partner",
-  description: "Delivering excellence in IT with innovative solutions tailored to your business needs since 2005.",
-  generator: "v0.dev",
-}
-
 export default function RootLayout({
   children,
 }: {
